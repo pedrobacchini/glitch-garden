@@ -21,3 +21,5 @@ MonoBehaviour:
     PrefabModificationsReferencedUnityObjects: []
     PrefabModifications: []
     SerializationNodes: []
+  timeToWaitSplashScreenInSeconds: 4
+  splashLoadType: 0

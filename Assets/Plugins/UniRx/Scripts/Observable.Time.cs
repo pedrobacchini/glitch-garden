@@ -1,5 +1,7 @@
 ﻿using System;
+using System.Collections;
 using System.Collections.Generic;
+using System.Threading;
 using UniRx.Operators;
 
 namespace UniRx
@@ -7,6 +9,26 @@ namespace UniRx
     // Timer, Interval, etc...
     public static partial class Observable
     {
+        public static IObservable<float> ToObservable(this UnityEngine.AsyncOperation asyncOperation)
+        {
+            if (asyncOperation == null) throw new ArgumentNullException("asyncOperation");
+
+            return FromCoroutine<float>((observer, cancellationToken) => RunAsyncOperation(asyncOperation, observer, cancellationToken));
+        }
+
+        private static IEnumerator RunAsyncOperation(UnityEngine.AsyncOperation asyncOperation, IObserver<float> observer, CancellationToken cancellationToken)
+        {
+            while (!asyncOperation.isDone && !cancellationToken.IsCancellationRequested)
+            {
+                observer.OnNext(asyncOperation.progress);
+                yield return null;
+            }
+            if (!cancellationToken.IsCancellationRequested)
+            {
+                observer.OnNext(asyncOperation.progress); // push 100%
+                observer.OnCompleted();
+            }
+        }
         public static IObservable<long> Interval(TimeSpan period)
         {
             return new TimerObservable(period, period, Scheduler.DefaultSchedulers.TimeBasedOperations);
