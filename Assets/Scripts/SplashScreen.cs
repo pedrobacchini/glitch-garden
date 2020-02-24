@@ -1,5 +1,7 @@
 ﻿using System;
+using Sirenix.OdinInspector;
 using UniRx;
+using UniRx.Triggers;
 using UnityEngine;
 using UnityEngine.SceneManagement;
 
@@ -11,27 +13,28 @@ public enum SplashLoadType
 
 public class SplashScreen : MonoBehaviour
 {
-    [SerializeField] private int timeToWaitSplashScreenInSeconds = 4;
     [SerializeField] private SplashLoadType splashLoadType = SplashLoadType.FixedTime;
-    public FloatReactiveProperty CurrentLoading { get; } = new FloatReactiveProperty(0);
+
+    [ShowIf("splashLoadType", SplashLoadType.FixedTime)] [SerializeField]
+    private int timeToWaitSplashScreenInSeconds = 4;
+
+    public ScheduledNotifier<float> ProgressObservable = new ScheduledNotifier<float>();
 
     private void Start()
     {
         switch (splashLoadType)
         {
             case SplashLoadType.FixedTime:
-                Observable.Interval(TimeSpan.FromSeconds(1))
-                    .Take(timeToWaitSplashScreenInSeconds)
-                    .Timestamp()
-                    .Subscribe(x => CurrentLoading.Value += 1f / timeToWaitSplashScreenInSeconds,
-                        () => SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex + 1))
+                Observable.Timer(TimeSpan.FromSeconds(timeToWaitSplashScreenInSeconds))
+                    .Subscribe(_ => SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex + 1))
+                    .AddTo(this);
+                this.UpdateAsObservable()
+                    .Subscribe(_ => ProgressObservable.Report(Time.time / timeToWaitSplashScreenInSeconds))
                     .AddTo(this);
                 break;
             case SplashLoadType.OnDemand:
                 SceneManager.LoadSceneAsync(SceneManager.GetActiveScene().buildIndex + 1)
-                    .ToObservable()
-                    .Do(x => CurrentLoading.Value = x)
-                    .Last()
+                    .AsAsyncOperationObservable(ProgressObservable)
                     .Subscribe()
                     .AddTo(this);
                 break;

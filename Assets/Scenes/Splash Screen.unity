@@ -668,8 +668,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 4e20079680fec4837beedad2598795e0, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  timeToWaitSplashScreenInSeconds: 4
   splashLoadType: 0
+  timeToWaitSplashScreenInSeconds: 4
 --- !u!4 &959496798
 Transform:
   m_ObjectHideFlags: 0

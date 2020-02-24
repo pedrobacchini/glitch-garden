@@ -9,6 +9,6 @@ public class LoadingDisplay : MonoBehaviour
     private void Start()
     {
         var image = GetComponent<Image>();
-        _splashScreen.CurrentLoading.Subscribe(loading => image.fillAmount = loading).AddTo(this);
+        _splashScreen.ProgressObservable.Subscribe(loading => image.fillAmount = loading).AddTo(this);
     }
 }
