@@ -6,13 +6,14 @@ using UnityEngine;
 
 public class Attacker : SerializedMonoBehaviour
 {
-    [PropertyRange(0f, 5f)] 
-    [OdinSerialize] public float WalkSpeed { get; set; }
+    [PropertyRange(0f, 5f)]
+    [OdinSerialize]
+    public float MovementSpeed { get; set; } = 1f;
 
     private void Start()
     {
         this.UpdateAsObservable()
-            .Subscribe(_ => transform.Translate(WalkSpeed * Time.deltaTime * Vector2.left))
+            .Subscribe(_ => transform.Translate(MovementSpeed * Time.deltaTime * Vector2.left))
             .AddTo(this);
     }
 }
