@@ -9,6 +9,14 @@ public class DefenderSpawner : MonoBehaviour
     private void Start()
     {
         this.OnMouseDownAsObservable()
-            .Subscribe(_ => Instantiate(defender, transform.position, Quaternion.identity));
+            .Select(_ => Camera.main.ScreenToWorldPoint(Input.mousePosition))
+            .Subscribe(mousePosition => Instantiate(defender, getWorldPositionInGrid(mousePosition), Quaternion.identity));
+    }
+
+    private static Vector2 getWorldPositionInGrid(Vector2 mousePosition)
+    {
+        var roundToIntX = Mathf.RoundToInt(mousePosition.x);
+        var roundToIntY = Mathf.RoundToInt(mousePosition.y);
+        return new Vector2(roundToIntX, roundToIntY);
     }
 }
