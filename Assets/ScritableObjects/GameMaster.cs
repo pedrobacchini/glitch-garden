@@ -7,6 +7,7 @@ using UnityEngine.SceneManagement;
 public class GameMaster : SingletonScriptableObject<GameMaster>
 {
     public ReactiveProperty<Defender> SelectDefender { get; } = new ReactiveProperty<Defender>();
+    public IntReactiveProperty Starts { get; } = new IntReactiveProperty(100);
     
     public static void LoadNextScene()
     {

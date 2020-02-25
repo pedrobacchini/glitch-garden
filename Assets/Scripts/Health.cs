@@ -28,7 +28,12 @@ public class Health : MonoBehaviour
     private void DealDamage(float damage)
     {
         _currentHealth -= damage;
-        if (_currentHealth > 0) return;
+        if (_currentHealth <= 0) Die();
+    }
+
+    private void Die()
+    {
+        GameMaster.Instance.Starts.Value += 20;
         gameObject.Destroy();
         TriggerDeathEffect();
     }

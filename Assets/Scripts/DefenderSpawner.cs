@@ -10,10 +10,16 @@ public class DefenderSpawner : MonoBehaviour
     {
         this.OnMouseDownAsObservable()
             .Select(_ => Camera.main.ScreenToWorldPoint(Input.mousePosition))
-            .Subscribe(mousePosition =>
-                Instantiate(_defender, getWorldPositionInGrid(mousePosition), Quaternion.identity));
+            .Subscribe(SpawnDefender);
 
         GameMaster.Instance.SelectDefender.Subscribe(defender => _defender = defender);
+    }
+
+    private void SpawnDefender(Vector3 mousePosition)
+    {
+        if (GameMaster.Instance.Starts.Value < _defender.starCost) return;
+        GameMaster.Instance.Starts.Value -= _defender.starCost;
+        Instantiate(_defender, getWorldPositionInGrid(mousePosition), Quaternion.identity);
     }
 
     private static Vector2 getWorldPositionInGrid(Vector2 mousePosition)
