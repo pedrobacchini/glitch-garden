@@ -2,6 +2,7 @@
 using Sirenix.Serialization;
 using UniRx;
 using UniRx.Triggers;
+using Unity.Linq;
 using UnityEngine;
 
 public class Projectile : SerializedMonoBehaviour
@@ -17,5 +18,10 @@ public class Projectile : SerializedMonoBehaviour
         this.UpdateAsObservable()
             .Subscribe(_ => transform.Translate(MovementSpeed * Time.deltaTime * Vector2.right))
             .AddTo(this);
+    }
+
+    public void Hit()
+    {
+        gameObject.Destroy();
     }
 }

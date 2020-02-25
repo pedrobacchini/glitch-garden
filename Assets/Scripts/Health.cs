@@ -8,6 +8,7 @@ public class Health : MonoBehaviour
 {
     [SerializeField] private float startHealth = 100f;
     [SerializeField] [ReadOnly] private float _currentHealth;
+    [SerializeField] private GameObject deathVFX = null;
 
     private void Start()
     {
@@ -16,13 +17,26 @@ public class Health : MonoBehaviour
         this.OnTriggerEnter2DAsObservable()
             .Select(otherCollider => otherCollider.gameObject.GetComponent<Projectile>())
             .Where(projectile => projectile != null)
-            .Subscribe(projectile => DealDamage(projectile.Damage))
+            .Subscribe(projectile =>
+            {
+                projectile.Hit();
+                DealDamage(projectile.Damage);
+            })
             .AddTo(this);
     }
 
     private void DealDamage(float damage)
     {
         _currentHealth -= damage;
-        if (_currentHealth <= 0) gameObject.Destroy();
+        if (_currentHealth > 0) return;
+        gameObject.Destroy();
+        TriggerDeathEffect();
+    }
+
+    private void TriggerDeathEffect()
+    {
+        if (!deathVFX) return;
+        var instantiate = Instantiate(deathVFX, transform.position, Quaternion.identity);
+        Destroy(instantiate, 1f);
     }
 }
