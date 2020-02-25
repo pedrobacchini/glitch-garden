@@ -42,6 +42,7 @@ GameObject:
   - component: {fileID: 6386926983927389599}
   - component: {fileID: 6386926983927389598}
   - component: {fileID: 1271823877}
+  - component: {fileID: -4514724734752565063}
   m_Layer: 0
   m_Name: Cactus
   m_TagString: Untagged
@@ -148,3 +149,15 @@ MonoBehaviour:
   projectile: {fileID: 2939290331697915305, guid: 4a55e009e28e14a0b80957e960ae2493,
     type: 3}
   gun: {fileID: 988954567}
+--- !u!114 &-4514724734752565063
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6386926983927389597}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 13ed62457672d4af1b13c1aad136c0db, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 

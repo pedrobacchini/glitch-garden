@@ -153,6 +153,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 2894bc26ca7946ee89f4765a9def71e9, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  _defenderSpawner: {fileID: 0}
+  defenders:
+  - {fileID: 6386926983927389597, guid: 2fea3cfb4bfe647d58b44231be520a39, type: 3}
+  - {fileID: 7287399808674501867, guid: ca9213ad880694137a9ffbf7804c85af, type: 3}
 --- !u!1 &2140923213
 GameObject:
   m_ObjectHideFlags: 0

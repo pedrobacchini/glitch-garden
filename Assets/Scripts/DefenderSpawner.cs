@@ -4,13 +4,16 @@ using UnityEngine;
 
 public class DefenderSpawner : MonoBehaviour
 {
-    [SerializeField] private GameObject defender = null;
+    private Defender _defender = null;
 
     private void Start()
     {
         this.OnMouseDownAsObservable()
             .Select(_ => Camera.main.ScreenToWorldPoint(Input.mousePosition))
-            .Subscribe(mousePosition => Instantiate(defender, getWorldPositionInGrid(mousePosition), Quaternion.identity));
+            .Subscribe(mousePosition =>
+                Instantiate(_defender, getWorldPositionInGrid(mousePosition), Quaternion.identity));
+
+        GameMaster.Instance.SelectDefender.Subscribe(defender => _defender = defender);
     }
 
     private static Vector2 getWorldPositionInGrid(Vector2 mousePosition)

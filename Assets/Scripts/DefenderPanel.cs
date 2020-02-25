@@ -1,3 +1,4 @@
+using Sirenix.Utilities;
 using UniRx;
 using UniRx.Triggers;
 using Unity.Linq;
@@ -11,7 +12,12 @@ public class DefenderPanel : MonoBehaviour
     private void Start()
     {
         _childrenEnumerable = gameObject.Children();
-        var initialColor = _childrenEnumerable.First().GetComponent<Image>().color;
+
+        var first = _childrenEnumerable.First();
+        var initialColor = first.GetComponent<Image>().color;
+
+        SelectChild(first);
+
         _childrenEnumerable
             .ForEach(child =>
             {
@@ -19,9 +25,15 @@ public class DefenderPanel : MonoBehaviour
                     .Subscribe(_ =>
                     {
                         ResetColorChildren(initialColor);
-                        child.GetComponent<Image>().color = Color.white;
+                        SelectChild(child);
                     });
             });
+    }
+
+    private static void SelectChild(GameObject child)
+    {
+        child.GetComponent<Image>().color = Color.white;
+        GameMaster.Instance.SelectDefender.Value = child.GetComponent<DefenderButton>().defender;
     }
 
     private void ResetColorChildren(Color initialColor)
