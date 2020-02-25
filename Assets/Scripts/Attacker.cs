@@ -1,16 +1,18 @@
-﻿using UniRx;
+﻿using Sirenix.OdinInspector;
+using Sirenix.Serialization;
+using UniRx;
 using UniRx.Triggers;
 using UnityEngine;
 
-public class Attacker : MonoBehaviour
+public class Attacker : SerializedMonoBehaviour
 {
-    [Range(0f, 5f)] 
-    [SerializeField] private float walkSpeed = 1;
+    [PropertyRange(0f, 5f)] 
+    [OdinSerialize] public float WalkSpeed { get; set; }
 
     private void Start()
     {
         this.UpdateAsObservable()
-            .Subscribe(_ => transform.Translate(walkSpeed * Time.deltaTime * Vector2.left))
+            .Subscribe(_ => transform.Translate(WalkSpeed * Time.deltaTime * Vector2.left))
             .AddTo(this);
     }
 }
