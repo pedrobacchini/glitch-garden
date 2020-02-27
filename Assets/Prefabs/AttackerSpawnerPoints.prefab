@@ -43,7 +43,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 4231ee4c5290940a59b5ec70181ec957, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  lizardPrefab: {fileID: 8207666517291857159, guid: 38b8d52f1bbd84782bf4b2132d2be575,
+  lizardPrefab: {fileID: 4294791956238088200, guid: 38b8d52f1bbd84782bf4b2132d2be575,
     type: 3}
   minSpawnDelay: 1
   maxSpawnDelay: 5
@@ -90,7 +90,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 4231ee4c5290940a59b5ec70181ec957, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  lizardPrefab: {fileID: 8207666517291857159, guid: 38b8d52f1bbd84782bf4b2132d2be575,
+  lizardPrefab: {fileID: 4294791956238088200, guid: 38b8d52f1bbd84782bf4b2132d2be575,
     type: 3}
   minSpawnDelay: 1
   maxSpawnDelay: 5
@@ -137,7 +137,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 4231ee4c5290940a59b5ec70181ec957, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  lizardPrefab: {fileID: 8207666517291857159, guid: 38b8d52f1bbd84782bf4b2132d2be575,
+  lizardPrefab: {fileID: 4294791956238088200, guid: 38b8d52f1bbd84782bf4b2132d2be575,
     type: 3}
   minSpawnDelay: 1
   maxSpawnDelay: 5
@@ -219,7 +219,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 4231ee4c5290940a59b5ec70181ec957, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  lizardPrefab: {fileID: 8207666517291857159, guid: 38b8d52f1bbd84782bf4b2132d2be575,
+  lizardPrefab: {fileID: 4294791956238088200, guid: 38b8d52f1bbd84782bf4b2132d2be575,
     type: 3}
   minSpawnDelay: 1
   maxSpawnDelay: 5
@@ -266,7 +266,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 4231ee4c5290940a59b5ec70181ec957, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  lizardPrefab: {fileID: 8207666517291857159, guid: 38b8d52f1bbd84782bf4b2132d2be575,
+  lizardPrefab: {fileID: 4294791956238088200, guid: 38b8d52f1bbd84782bf4b2132d2be575,
     type: 3}
   minSpawnDelay: 1
   maxSpawnDelay: 5

@@ -12,8 +12,8 @@ GameObject:
   - component: {fileID: 8207666517291857157}
   - component: {fileID: 8207666517291857156}
   - component: {fileID: 1686431813}
-  - component: {fileID: 8207666517291857159}
   - component: {fileID: 8369370290848773734}
+  - component: {fileID: 4294791956238088200}
   m_Layer: 0
   m_Name: Lizard
   m_TagString: Untagged
@@ -130,7 +130,22 @@ BoxCollider2D:
   serializedVersion: 2
   m_Size: {x: 0.46587038, y: 0.64273477}
   m_EdgeRadius: 0
---- !u!114 &8207666517291857159
+--- !u!114 &8369370290848773734
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8207666517291857158}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: a6ed14d4ef1f54d68bcb7ee0bf922da1, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  startHealth: 100
+  _currentHealth: 0
+  deathVFX: {fileID: 1906222994913036, guid: 740c2b3187d56c341b8cb78e8aa925c5, type: 3}
+--- !u!114 &4294791956238088200
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -154,18 +169,3 @@ MonoBehaviour:
     - Name: MovementSpeed
       Entry: 4
       Data: 1
---- !u!114 &8369370290848773734
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 8207666517291857158}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: a6ed14d4ef1f54d68bcb7ee0bf922da1, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  startHealth: 100
-  _currentHealth: 0
-  deathVFX: {fileID: 1906222994913036, guid: 740c2b3187d56c341b8cb78e8aa925c5, type: 3}
