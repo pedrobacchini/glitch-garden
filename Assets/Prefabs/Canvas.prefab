@@ -13,7 +13,7 @@ GameObject:
   - component: {fileID: 1195042191}
   - component: {fileID: 8625347359445150589}
   m_Layer: 5
-  m_Name: Stars
+  m_Name: Star Text
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -35,8 +35,8 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: -620, y: -458}
-  m_SizeDelta: {x: 200, y: 101.2}
+  m_AnchoredPosition: {x: -598.2, y: -463.3}
+  m_SizeDelta: {x: 243.5, y: 111.7}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!222 &1195042192
 CanvasRenderer:
@@ -287,7 +287,19 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 441bf009d195e470daf13010c8ae4644, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  defender: {fileID: 0}
+  serializationData:
+    SerializedFormat: 2
+    SerializedBytes: 
+    ReferencedUnityObjects:
+    - {fileID: -4514724734752565063, guid: 2fea3cfb4bfe647d58b44231be520a39, type: 3}
+    SerializedBytesString: 
+    Prefab: {fileID: 0}
+    PrefabModificationsReferencedUnityObjects: []
+    PrefabModifications: []
+    SerializationNodes:
+    - Name: Defender
+      Entry: 10
+      Data: 0
 --- !u!1 &1754756354
 GameObject:
   m_ObjectHideFlags: 0
@@ -323,7 +335,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: -359.9, y: -460}
+  m_AnchoredPosition: {x: -331, y: -460}
   m_SizeDelta: {x: 100, y: 100}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &9022615137449466133
@@ -453,7 +465,19 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 441bf009d195e470daf13010c8ae4644, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  defender: {fileID: 0}
+  serializationData:
+    SerializedFormat: 2
+    SerializedBytes: 
+    ReferencedUnityObjects:
+    - {fileID: -7158189663776978061, guid: ca9213ad880694137a9ffbf7804c85af, type: 3}
+    SerializedBytesString: 
+    Prefab: {fileID: 0}
+    PrefabModificationsReferencedUnityObjects: []
+    PrefabModifications: []
+    SerializationNodes:
+    - Name: Defender
+      Entry: 10
+      Data: 0
 --- !u!1 &4888566857642779244
 GameObject:
   m_ObjectHideFlags: 0
@@ -625,7 +649,7 @@ SpriteRenderer:
   m_LightmapParameters: {fileID: 0}
   m_SortingLayerID: 0
   m_SortingLayer: 0
-  m_SortingOrder: 15
+  m_SortingOrder: 20
   m_Sprite: {fileID: 21300000, guid: f91d864d867c74db7b113361b5c56372, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
@@ -780,7 +804,7 @@ SpriteRenderer:
   m_LightmapParameters: {fileID: 0}
   m_SortingLayerID: 0
   m_SortingLayer: 0
-  m_SortingOrder: 15
+  m_SortingOrder: 20
   m_Sprite: {fileID: 21300000, guid: 2a44995e7c574491daec90eb8c2c2a4f, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0

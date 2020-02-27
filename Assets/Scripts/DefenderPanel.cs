@@ -1,4 +1,3 @@
-using Sirenix.Utilities;
 using UniRx;
 using UniRx.Triggers;
 using Unity.Linq;
@@ -33,7 +32,7 @@ public class DefenderPanel : MonoBehaviour
     private static void SelectChild(GameObject child)
     {
         child.GetComponent<Image>().color = Color.white;
-        GameMaster.Instance.SelectDefender.Value = child.GetComponent<DefenderButton>().defender;
+        GameMaster.Instance.SelectDefender.Value = child.GetComponent<DefenderButton>().Defender;
     }
 
     private void ResetColorChildren(Color initialColor)

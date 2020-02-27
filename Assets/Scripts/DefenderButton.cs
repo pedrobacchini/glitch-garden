@@ -1,6 +1,7 @@
-﻿using UnityEngine;
+﻿using Sirenix.OdinInspector;
+using Sirenix.Serialization;
 
-public class DefenderButton : MonoBehaviour
+public class DefenderButton : SerializedMonoBehaviour
 {
-    public Defender defender = null;
+    [OdinSerialize] public Defender Defender { get; private set; }
 }

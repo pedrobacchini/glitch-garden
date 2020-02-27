@@ -1,8 +1,9 @@
-﻿using UnityEngine;
+﻿using Sirenix.OdinInspector;
+using Sirenix.Serialization;
 
-public class Defender : MonoBehaviour
+public class Defender : SerializedMonoBehaviour
 {
-    public int starCost;
+    [OdinSerialize] public int StarCost { get; private set; }
 
     public void AddStars(int amount)
     {

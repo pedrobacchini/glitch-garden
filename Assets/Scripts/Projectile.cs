@@ -9,7 +9,7 @@ public class Projectile : SerializedMonoBehaviour
 {
     [PropertyRange(0f, 5f)]
     [OdinSerialize]
-    public float MovementSpeed { get; set; } = 1f;
+    public float MovementSpeed { get; private set; } = 1f;
 
     [OdinSerialize] public float Damage { get; private set; } = 20f;
 

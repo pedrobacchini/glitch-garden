@@ -17,8 +17,8 @@ public class DefenderSpawner : MonoBehaviour
 
     private void SpawnDefender(Vector3 mousePosition)
     {
-        if (GameMaster.Instance.Starts.Value < _defender.starCost) return;
-        GameMaster.Instance.Starts.Value -= _defender.starCost;
+        if (GameMaster.Instance.Starts.Value < _defender.StarCost) return;
+        GameMaster.Instance.Starts.Value -= _defender.StarCost;
         Instantiate(_defender, getWorldPositionInGrid(mousePosition), Quaternion.identity);
     }
 
