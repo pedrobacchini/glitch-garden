@@ -7,9 +7,9 @@ using UnityEngine;
 
 public class Projectile : SerializedMonoBehaviour
 {
-    [PropertyRange(0f, 5f)]
+    [PropertyRange(0f, 20f)]
     [OdinSerialize]
-    public float MovementSpeed { get; private set; } = 1f;
+    public float MovementSpeed { get; private set; } = 10f;
 
     [OdinSerialize] public float Damage { get; private set; } = 20f;
 

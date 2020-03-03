@@ -106,7 +106,7 @@ MonoBehaviour:
     SerializationNodes:
     - Name: MovementSpeed
       Entry: 4
-      Data: 3
+      Data: 10
     - Name: Damage
       Entry: 4
       Data: 50

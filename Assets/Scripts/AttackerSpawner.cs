@@ -27,6 +27,7 @@ public class AttackerSpawner : MonoBehaviour
 
     private void SpawnAttacker()
     {
-        Instantiate(lizardPrefab, transform.position, Quaternion.identity);
+        var attacker = Instantiate(lizardPrefab, transform.position, Quaternion.identity);
+        attacker.transform.parent = transform;
     }
 }

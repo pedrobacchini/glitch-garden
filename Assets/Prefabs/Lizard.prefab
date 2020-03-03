@@ -165,7 +165,5 @@ MonoBehaviour:
     Prefab: {fileID: 0}
     PrefabModificationsReferencedUnityObjects: []
     PrefabModifications: []
-    SerializationNodes:
-    - Name: MovementSpeed
-      Entry: 4
-      Data: 1
+    SerializationNodes: []
+  movementSpeed: 1

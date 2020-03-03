@@ -2,6 +2,7 @@
 using UnityEngine;
 using UnityEngine.UI;
 
+[RequireComponent(typeof(Image))]
 public class LoadingDisplay : MonoBehaviour
 {
     [SerializeField] private SplashScreen _splashScreen = null;

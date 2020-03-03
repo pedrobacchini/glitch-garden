@@ -2,6 +2,7 @@
 using UniRx;
 using UnityEngine;
 
+[RequireComponent(typeof(TextMeshProUGUI))]
 public class StarDisplay : MonoBehaviour
 {
     private void Start()
