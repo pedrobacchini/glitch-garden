@@ -6,6 +6,7 @@ using UnityEngine.SceneManagement;
 [CreateAssetMenu(fileName = "New Game Master", menuName = "Singletons/Game Master")]
 public class GameMaster : SingletonScriptableObject<GameMaster>
 {
+    [SerializeField] private int InitialStars = 100;
     public ReactiveProperty<Defender> SelectDefender { get; } = new ReactiveProperty<Defender>();
     public IntReactiveProperty Starts { get; } = new IntReactiveProperty(100);
     
@@ -24,5 +25,6 @@ public class GameMaster : SingletonScriptableObject<GameMaster>
     [RuntimeInitializeOnLoadMethod]
     private static void Initialize()
     {
+        Instance.Starts.Value = Instance.InitialStars;
     }
 }

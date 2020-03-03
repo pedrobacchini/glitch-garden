@@ -221,8 +221,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   lizardPrefab: {fileID: 4294791956238088200, guid: 38b8d52f1bbd84782bf4b2132d2be575,
     type: 3}
-  minSpawnDelay: 1
-  maxSpawnDelay: 5
+  minSpawnDelay: 10
+  maxSpawnDelay: 10
 --- !u!1 &4058956180109994035
 GameObject:
   m_ObjectHideFlags: 0
